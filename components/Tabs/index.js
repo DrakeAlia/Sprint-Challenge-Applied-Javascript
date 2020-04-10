@@ -9,3 +9,27 @@
 //    <div class="tab">topic here</div>
 
 
+const topicReq = axios.get("https://lambda-times-backend.herokuapp.com/topics");
+
+// reviewing the document structure //
+//topicReq.then(res => console.log(res.data))
+
+// parent element to append to //
+let topics = document.getElementsByClassName('topics')[0];
+
+
+function newTab(tabName) {
+    let div = document.createElement('div');
+    div.classList.add('tab');
+    div.innerText = tabName
+    topics.appendChild(div);
+}
+
+// new tab componet //
+newTab('all');
+
+// iterate through all topics making new tabs for each one //
+topicReq.then(res => {
+    const topicArr = res.data.topics
+    topicArr.forEach(item => newTab(item));
+});

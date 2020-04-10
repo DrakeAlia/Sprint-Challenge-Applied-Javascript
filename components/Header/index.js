@@ -25,11 +25,11 @@ function Header() {
     span.innerText = "April 10th, 2020";
     h1.innerText = "Lambda Times";
     span2.classList.add('temp');
-    span2.innerText = "98";
+    span2.innerText = "*30*";
 
-    div.appendChild(span)
-    div.appendChild(h1)
-    div.appendChild(span2)
+    div.appendChild(span);
+    div.appendChild(h1);
+    div.appendChild(span2);
 
     return div
 }
